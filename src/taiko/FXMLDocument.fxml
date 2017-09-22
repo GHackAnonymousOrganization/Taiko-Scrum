@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taiko.FXMLDocumentController">
+   <children>
+      <Pane fx:id="panelMenuPrincipal" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.56" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../fotos/56bdf35505c4b_thumb900.jpg" />
+               </image>
+            </ImageView>
+            <Rectangle fill="#cccccc" height="150.0" layoutX="165.0" layoutY="250.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+            <Rectangle fill="#cccccc" height="150.0" layoutX="414.0" layoutY="250.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+            <Button fx:id="botonHelp" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#mostrarHelp" style="-fx-background-color: #fff;">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../fotos/images.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <JFXButton fx:id="botonAdmin" layoutX="535.0" layoutY="16.0" onAction="#irAdministrador" style="-fx-background-color: gray;" text=" ">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../fotos/640_-_Admin_Roles-128.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets bottom="5.0" left="6.0" top="5.0" />
+               </padding></JFXButton>
+            <JFXButton buttonType="RAISED" depthTest="ENABLE" ellipsisString="" layoutX="100.0" layoutY="125.0" onAction="#irTipoAnuncio" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #fff;" wrapText="true">
+               <graphic>
+                  <ImageView fitHeight="122.0" fitWidth="130.0" pickOnBounds="true" smooth="false" x="25.0" y="25.0">
+                     <image>
+                        <Image url="@../fotos/shopping-bag-flat.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" ellipsisString="" layoutX="350.0" layoutY="125.0" onAction="#irInformacion" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #fff;" text=" ">
+               <graphic>
+                  <ImageView fitHeight="116.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@../fotos/red_information_icon-icons.com_59517.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="10.0" top="5.0" />
+               </padding>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXButton>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../fotos/cooltext248059356700293.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="panelAnuncios" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff;" visible="false">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.48" pickOnBounds="true">
+               <image>
+                  <Image url="@../fotos/56bdf35505c4b_thumb900.jpg" />
+               </image>
+            </ImageView>
+            <Polyline fill="#cccccc" layoutX="300.0" layoutY="54.0" opacity="0.49" strokeType="INSIDE" strokeWidth="0.0">
+              <points>
+                <Double fx:value="-50.0" />
+                <Double fx:value="-40.0" />
+                <Double fx:value="50.0" />
+                <Double fx:value="-40.0" />
+                <Double fx:value="0.0" />
+                <Double fx:value="60.0" />
+                <Double fx:value="-50.0" />
+                <Double fx:value="-40.0" />
+              </points>
+            </Polyline>
+            <Button fx:id="botonBackMenu" layoutX="25.0" layoutY="14.0" mnemonicParsing="false" onAction="#backMenu" style="-fx-background-color: #fff;">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../fotos/icono_volver-2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <Blend opacity="0.43">
+                     <topInput>
+                        <DropShadow />
+                     </topInput>
+                  </Blend>
+               </effect></Button>
+            <Label alignment="CENTER" layoutX="200.0" layoutY="15.0" prefHeight="20.0" prefWidth="200.0" text="Anuncios">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <ListView fx:id="listaAnuncios" layoutX="25.0" layoutY="50.0" opacity="0.72" prefHeight="300.0" prefWidth="550.0" />
+            <JFXRadioButton layoutX="25.0" layoutY="365.0" text="Pobre" visible="false">
+               <toggleGroup>
+                  <ToggleGroup fx:id="presio" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="129.0" layoutY="365.0" text="Medio" toggleGroup="$presio" visible="false" />
+            <JFXRadioButton layoutX="229.0" layoutY="365.0" text="Caro" toggleGroup="$presio" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="panelTipoAnuncio" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff;" visible="false">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.62" pickOnBounds="true">
+               <image>
+                  <Image url="@../fotos/56bdf35505c4b_thumb900.jpg" />
+               </image>
+            </ImageView>
+            <Rectangle fill="#cccccc" height="10.0" layoutY="390.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+            <Accordion layoutX="100.0" layoutY="50.0" prefHeight="300.0" prefWidth="400.0">
+              <panes>
+                <TitledPane fx:id="titleGastronomia" alignment="CENTER" opacity="0.88" text="Gastronomia">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="15.0" layoutY="15.0" prefHeight="195.0" prefWidth="200.0" text="Conjunto de conocimientos y actividades que están relacionados con los ingredientes, recetas y técnicas de la culinaria así como con su evolución histórica." textAlignment="CENTER" wrapText="true" />
+                              <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="234.0" layoutY="15.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../../fotos/gastronomia.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Button layoutX="283.0" layoutY="175.0" mnemonicParsing="false" onAction="#irAnuncios" text="Entrar" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                </TitledPane>
+                <TitledPane fx:id="titleTiendas" alignment="CENTER" expanded="false" text="Tiendas">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="283.0" layoutY="174.0" mnemonicParsing="false" onAction="#irAnuncios" text="Entrar" />
+                              <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="234.0" layoutY="14.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../../fotos/Shop-Promo-Box.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="14.0" layoutY="15.0" prefHeight="195.0" prefWidth="200.0" text="Establecimiento en el que se vende cualquier tipo de producto de consumo.&quot;tienda de ropa; tienda de comestibles; tienda de electrodomésticos; el diseñador decidió crear su propia línea de accesorios de lujo y venderlos en una tienda exclusiva&quot;" textAlignment="CENTER" wrapText="true" />
+                           </children></AnchorPane>
+                  </content>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                </TitledPane>
+                <TitledPane fx:id="titleServicios" alignment="CENTER" animated="false" expanded="false" text="Servicios">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="283.0" layoutY="174.0" mnemonicParsing="false" onAction="#irAnuncios" text="Entrar" />
+                              <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="234.0" layoutY="14.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../../../fotos/cinta.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="14.0" layoutY="15.0" prefHeight="195.0" prefWidth="200.0" text="Sector de servicios o sector terciario es el sector económico que engloba las actividades relacionadas con los servicios materiales no productores de bienes." textAlignment="CENTER" wrapText="true" />
+                           </children></AnchorPane>
+                  </content>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                </TitledPane>
+              </panes>
+            </Accordion>
+            <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="14.0" onAction="#backMenuPrincipal" style="-fx-background-color: #fff;" text=" ">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../fotos/icono_volver-2.png" />
+                     </image>
+                  </ImageView>
+               </graphic></JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="564.0" layoutY="14.0" style="-fx-background-color: #ccc;" text="?" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="panelHelp" opacity="0.86" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c5c5c5;" visible="false">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="265.0" layoutY="360.0" onAction="#volverHelp" style="-fx-background-color: #fff;" text=" ">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                     <image>
+                        <Image url="@../fotos/icono_volver-2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="7.0" />
+               </padding></JFXButton>
+            <Pane layoutX="50.0" layoutY="50.0" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: #333;">
+               <children>
+                  <ScrollPane layoutX="14.0" layoutY="14.0" prefHeight="271.0" prefWidth="471.0" vbarPolicy="ALWAYS">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="468.0">
+                           <children>
+                              <Label layoutX="32.0" prefWidth="400.0" text="Las pantallas táctiles se han adueñado de todos los aspectos de nuestras vidas, y hoy por hoy, probablemente sean más utilizadas que otros sistemas de entrada tradicionales como teclados físicos y ratones. Sin embargo, no siempre ha sido así, y durante bastante tiempo estos sistemas estuvieron confinados a un puñado de dispositivos puntuales." wrapText="true">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                              <Label layoutX="32.0" layoutY="100.0" prefWidth="400.0" text="Difícilmente encontraremos a alguien que no haya usado una pantalla táctil, y muchos saben que existen por lo menos dos tipos: capacitivas y resistivas. Sin embargo, las pantallas táctiles tienen décadas entre nosotros, hemos visto diferentes tecnologías, y más allá de las que dominan actualmente, hay nuevos sistemas en desarrollo tratando de abrirse un hueco en el mercado. Repasemos los principales tipos." wrapText="true">
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="cartelera" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff;" visible="false">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.53" pickOnBounds="true">
+               <image>
+                  <Image url="@../fotos/CTW%20background%20PROJECTS%20FLAT.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="carteleraImg" fitHeight="370.0" fitWidth="349.0" layoutX="126.0" layoutY="15.0" pickOnBounds="true">
+               <effect>
+                  <DropShadow />
+               </effect></ImageView>
+            <JFXButton layoutX="14.0" layoutY="15.0" onAction="#volverAnuncio" style="-fx-background-color: #333;" text=" " textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="117.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../fotos/icono_volver-2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
