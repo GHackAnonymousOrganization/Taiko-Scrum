@@ -269,7 +269,7 @@
             <Label fx:id="labelContacto" layoutX="440.0" layoutY="304.0" prefHeight="17.0" prefWidth="100.0" text="Label" textFill="#fffdfd" />
          </children>
       </Pane>
-     <Pane fx:id="panelInformacion" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff;">
+     <Pane fx:id="panelInformacion" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fff;" visible="false">
          <children>
             <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.68" pickOnBounds="true">
                <image>
@@ -282,11 +282,11 @@
                   <ImageView fx:id="imagenInformacion" fitHeight="128.0" fitWidth="150.0" layoutX="379.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
-            <JFXButton buttonType="RAISED" layoutX="26.0" layoutY="14.0" onAction="#backMenuInfo" prefHeight="28.0" prefWidth="21.0" style="-fx-background-color: #fff;" text=" ">
+            <JFXButton buttonType="RAISED" layoutX="26.0" layoutY="14.0" onAction="#backMenuInfo" prefHeight="42.0" prefWidth="57.0" style="-fx-background-color: rgba(0,0,0,0.2); -fx-background-radius: 100%;" text=" ">
                <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="29.0" fitWidth="34.0" pickOnBounds="true" translateX="5.0">
                      <image>
-                        <Image url="@../fotos/icono_volver-2.png" />
+                        <Image url="@../fotos/icono_volver-3.png" />
                      </image>
                   </ImageView>
                </graphic></JFXButton>
@@ -317,23 +317,28 @@
                   </ImageView>
                </children>
             </Pane>
-            <ComboBox layoutX="225.0" layoutY="42.0" prefWidth="150.0" promptText="English" visibleRowCount="5" />
-            <CheckBox layoutX="396.0" layoutY="116.0" mnemonicParsing="false" text="Mute" />
+            <ComboBox layoutX="225.0" layoutY="50.0" prefWidth="150.0" promptText="English" visibleRowCount="5" />
             <Pane layoutX="44.0" layoutY="105.0" prefHeight="263.0" prefWidth="522.0" style="-fx-background-color: rgba(173, 173, 173,0.9); -fx-background-radius: 50px;">
                <children>
-                  <Label prefHeight="17.0" prefWidth="48.0" text="Sound" />
-                  <Slider />
+                  <Label layoutX="86.0" layoutY="16.0" prefHeight="17.0" prefWidth="48.0" text="Sound" />
+                  <Slider layoutX="135.0" layoutY="18.0" prefHeight="14.0" prefWidth="252.0" />
+                  <CheckBox layoutX="406.0" layoutY="17.0" mnemonicParsing="false" text="Mute" />
                </children>
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="panelHelp" opacity="0.86" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c5c5c5;" visible="false">
+      <Pane fx:id="panelHelp" opacity="0.86" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c5c5c5;">
          <children>
-            <JFXButton buttonType="RAISED" layoutX="265.0" layoutY="360.0" onAction="#volverHelp" style="-fx-background-color: #fff;" text=" ">
+            <ImageView fitHeight="400.0" fitWidth="607.0" opacity="0.77" pickOnBounds="true">
+               <image>
+                  <Image url="@../fotos/fondo2.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton buttonType="RAISED" layoutX="265.0" layoutY="360.0" onAction="#volverHelp" style="-fx-background-color: rgba(0, 0 ,0,0.2); -fx-background-radius: 100%;" text=" ">
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                      <image>
-                        <Image url="@../../../fotos/icono_volver-2.png" />
+                        <Image url="@../fotos/icono_volver-3.png" />
                      </image>
                   </ImageView>
                </graphic>
