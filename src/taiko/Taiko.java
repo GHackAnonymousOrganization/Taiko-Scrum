@@ -19,11 +19,15 @@ public class Taiko extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
-        Scene scene = new Scene(root);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));  
         
-        stage.setScene(scene);
+        
+        Parent home_page_parent = (Parent)fxmlLoader.load();
+
+        Scene home_page_scene = new Scene(home_page_parent);
+        
+        stage.setScene(home_page_scene);
         stage.show();
     }
 
