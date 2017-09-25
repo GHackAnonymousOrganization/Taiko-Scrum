@@ -90,7 +90,6 @@
                   <Image url="@../fotos/fondo2.jpg" />
                </image>
             </ImageView>
-            <Rectangle fill="#cccccc" height="10.0" layoutY="390.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
             <JFXButton buttonType="RAISED" layoutX="26.0" layoutY="14.0" onAction="#backSettings" prefHeight="42.0" prefWidth="57.0" style="-fx-background-color: rgba(0,0,0,0.2); -fx-background-radius: 100%;" text=" ">
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="34.0" pickOnBounds="true" translateX="5.0">
@@ -119,9 +118,9 @@
             </Pane>
          </children>
       </Pane>
-      <Pane fx:id="panelInstructions" opacity="0.86" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c5c5c5;" visible="false">
+      <Pane fx:id="panelInstructions" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c5c5c5;" visible="false">
          <children>
-            <ImageView fitHeight="400.0" fitWidth="607.0" opacity="0.77" pickOnBounds="true">
+            <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.68" pickOnBounds="true">
                <image>
                   <Image url="@../fotos/fondo2.jpg" />
                </image>
@@ -143,17 +142,15 @@
                   </ScrollPane>
                </children>
             </Pane>
-            <JFXButton buttonType="RAISED" layoutX="265.0" layoutY="360.0" onAction="#backInstructions" style="-fx-background-color: rgba(0, 0 ,0,0.2); -fx-background-radius: 100%;" text=" ">
+            <JFXButton buttonType="RAISED" layoutX="539.0" layoutY="8.0" onAction="#backInstructions" prefHeight="42.0" prefWidth="57.0" style="-fx-background-color: rgba(0,0,0,0.2); -fx-background-radius: 100%;" text=" ">
                <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                  <ImageView fitHeight="29.0" fitWidth="34.0" pickOnBounds="true" rotate="180.0" translateX="5.0">
                      <image>
                         <Image url="@../fotos/icono_volver-3.png" />
                      </image>
                   </ImageView>
                </graphic>
-               <padding>
-                  <Insets left="7.0" />
-               </padding></JFXButton>
+            </JFXButton>
          </children>
       </Pane>
    </children>

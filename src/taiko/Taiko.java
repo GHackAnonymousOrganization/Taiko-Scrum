@@ -23,11 +23,11 @@ public class Taiko extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));  
         
         
-        Parent home_page_parent = (Parent)fxmlLoader.load();
+        Parent homePageParent = (Parent)fxmlLoader.load();
 
-        Scene home_page_scene = new Scene(home_page_parent);
+        Scene homePageScene = new Scene(homePageParent);
         
-        stage.setScene(home_page_scene);
+        stage.setScene(homePageScene);
         stage.show();
     }
 

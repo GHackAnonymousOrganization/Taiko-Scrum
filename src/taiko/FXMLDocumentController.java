@@ -75,7 +75,6 @@ public class FXMLDocumentController implements Initializable {
     void backSettings(ActionEvent event) {
         animation(panelSettings, "centeRight");
         animation(panelMenuPrincipal, "right");
-        //panelSettings.setVisible(false);
         panelMenuPrincipal.setVisible(true);
     }
     
@@ -94,13 +93,24 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void goInstructions(ActionEvent event) {
+        //panelInstructions.setVisible(true);
+        //animation(panelInstructions, "top");
+        
+        animation(panelMenuPrincipal, "centeRight");
+        animation(panelInstructions, "right");
+        
         panelInstructions.setVisible(true);
-        animation(panelInstructions, "top");
+        
     }
 
     @FXML
     void backInstructions(ActionEvent event) {
-        animation(panelInstructions, "up");
+        //animation(panelInstructions, "up");
+        
+        animation(panelInstructions, "leftCenter");
+        animation(panelMenuPrincipal, "left");
+        
+        panelMenuPrincipal.setVisible(true);
     }
     
     @FXML
