@@ -18,6 +18,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
@@ -64,12 +65,80 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private JFXButton redButton;
     
+    @FXML
+    private Pane panelDificultyLevel;
+    
+    @FXML
+    private JFXButton buttonMedium;
+
+    @FXML
+    private JFXButton buttonHard;
+    
+    @FXML
+    private JFXButton buttonEasy;
+    
+    @FXML
+    private Pane panelPlay;
+    
+    @FXML
+    private Label scoreLabel;
+    
+    @FXML
+    private ImageView perfectPhotoBlue;
+    
+    @FXML
+    private ImageView goodPhotoBlue;
+    
+    @FXML
+    private ImageView badPhotoBlue;
+    
+     @FXML
+    private ImageView perfectPhotoRed;
+    
+    @FXML
+    private ImageView badPhotoRed;
+     
+    @FXML
+    private ImageView goodPhotoRed;
+    
+    
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //To change body of generated methods, choose Tools | Templates.
         //throw new UnsupportedOperationException("Not supported yet."); 
         
+    }
+    
+    void redPerfect(){
+        perfectPhotoBlue.setVisible(true);
+        goodPhotoRed.setVisible(false);
+        badPhotoRed.setVisible(false);
+    }
+    void redGood(){
+        goodPhotoRed.setVisible(true);
+        badPhotoRed.setVisible(false);
+        perfectPhotoBlue.setVisible(false);
+    }
+    void redBad(){
+        goodPhotoRed.setVisible(false);
+        badPhotoRed.setVisible(true);
+        perfectPhotoBlue.setVisible(false);
+    }
+    void bluePerfect(){
+        perfectPhotoRed.setVisible(true);
+        goodPhotoRed.setVisible(false);
+        badPhotoRed.setVisible(false);
+    }
+    void blueGood(){
+        goodPhotoBlue.setVisible(true);
+        badPhotoBlue.setVisible(false);
+        perfectPhotoRed.setVisible(false);
+    }
+    void blueBad(){
+        goodPhotoBlue.setVisible(false);
+        badPhotoBlue.setVisible(true);
+        perfectPhotoRed.setVisible(false);
     }
     
     @FXML
@@ -93,10 +162,10 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void goPlay(ActionEvent event) {
-        throw new UnsupportedOperationException("La ventana play no esta inplementada"); 
-        /*animation(panelMenuPrincipal, "leftCenter");
-        animation(panelPlay, "left");
-        panelPlay.setVisible(true);*/
+       // throw new UnsupportedOperationException("La ventana play no esta inplementada"); 
+        animation(panelMenuPrincipal, "leftCenter");
+        animation(panelDificultyLevel, "left");
+        panelDificultyLevel.setVisible(true);
     }
 
     @FXML
@@ -111,6 +180,13 @@ public class FXMLDocumentController implements Initializable {
         
     }
 
+    @FXML
+    void backDificultyLevel(ActionEvent event) {
+        animation(panelDificultyLevel, "centeRight");
+        animation(panelMenuPrincipal, "right");
+        panelMenuPrincipal.setVisible(true);
+    }
+    
     @FXML
     void backInstructions(ActionEvent event) {
         //animation(panelInstructions, "up");
@@ -131,6 +207,40 @@ public class FXMLDocumentController implements Initializable {
             textInstruction.setText(instruction.getBasqueInstruction());
         }
     }
+    
+    @FXML
+    void goEasyLevel(ActionEvent event) {
+        
+        //antes hay que cargar el fichero de la camcion
+        
+        animation(panelDificultyLevel, "leftCenter");
+        animation(panelPlay, "left");
+        panelPlay.setVisible(true);
+    }
+
+    @FXML
+    void goMediumLevel(ActionEvent event) {
+        
+        //antes hay que cargar el fichero de la camcion
+        
+        animation(panelDificultyLevel, "leftCenter");
+        animation(panelPlay, "left");
+        panelPlay.setVisible(true);
+
+    }
+    
+    @FXML
+    void goHardLevel(ActionEvent event) {
+        
+        //antes hay que cargar el fichero de la camcion
+        
+        animation(panelDificultyLevel, "leftCenter");
+        animation(panelPlay, "left");
+        panelPlay.setVisible(true);
+
+    }
+    
+    //Los ventos no funcionan cuando se inicia el juego desde la ventana principal
     
     @FXML
     void buttonPress(KeyEvent  event) {

@@ -153,15 +153,108 @@
             </JFXButton>
          </children>
       </Pane>
-      <Pane prefHeight="400.0" prefWidth="600.0">
+      <Pane fx:id="panelPlay" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.91" pickOnBounds="true" smooth="false">
+            <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" smooth="false">
                <image>
                   <Image url="@../fotos/fondo3_3.jpg" />
                </image>
             </ImageView>
             <JFXButton fx:id="blueButton" layoutX="191.0" layoutY="320.0" onKeyPressed="#buttonPress" onKeyReleased="#buttonRelease" prefHeight="53.0" prefWidth="57.0" style="-fx-border-color: #fff; -fx-background-radius: 100%; -fx-border-radius: 100%; -fx-background-color: rgba(94, 192, 237,0.5);" />
             <JFXButton fx:id="redButton" layoutX="330.0" layoutY="320.0" onKeyPressed="#buttonPress" onKeyReleased="#buttonRelease" prefHeight="53.0" prefWidth="57.0" style="-fx-border-color: #fff; -fx-background-radius: 100%; -fx-border-radius: 100%; -fx-background-color: rgba(232, 58, 39,0.5);" />
+            <ImageView fx:id="perfectPhotoRed" fitHeight="67.0" fitWidth="162.0" layoutX="440.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../fotos/perfect.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="goodPhotoRed" fitHeight="67.0" fitWidth="162.0" layoutX="430.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../fotos/good.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="badPhotoRed" fitHeight="61.0" fitWidth="132.0" layoutX="424.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../fotos/bad.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="perfectPhotoBlue" fitHeight="67.0" fitWidth="162.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../fotos/perfect.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="goodPhotoBlue" fitHeight="67.0" fitWidth="162.0" layoutX="31.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../fotos/good.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="badPhotoBlue" fitHeight="61.0" fitWidth="132.0" layoutX="25.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../fotos/bad.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="436.0" layoutY="139.0" prefHeight="123.0" prefWidth="150.0" style="-fx-background-color: rgba(173, 173, 173,0.9); -fx-background-radius: 50px;">
+               <children>
+                  <Label layoutX="23.0" layoutY="43.0" text="Score:">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="scoreLabel" layoutX="88.0" layoutY="25.0" prefHeight="74.0" prefWidth="48.0" text="0">
+                     <font>
+                        <Font size="46.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="panelDificultyLevel" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@../fotos/fondo2.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="14.0" onAction="#backDificultyLevel" prefHeight="42.0" prefWidth="57.0" style="-fx-background-color: rgba(0,0,0,0.2); -fx-background-radius: 100%;" text=" ">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="34.0" pickOnBounds="true" translateX="5.0">
+                     <image>
+                        <Image url="@../fotos/icono_volver-3.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Pane layoutX="28.0" layoutY="105.0" prefHeight="172.0" prefWidth="544.0" style="-fx-background-color: rgba(173, 173, 173,0.9); -fx-background-radius: 50px;">
+               <children>
+                  <JFXButton fx:id="buttonEasy" layoutX="8.0" layoutY="25.0" onAction="#goEasyLevel" style="-fx-background-radius: 100%; -fx-border-radius: 100%; -fx-background-color: rgba(219, 219, 219,0);" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="115.0" fitWidth="126.0" opacity="0.91" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@../fotos/star_easy.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="buttonMedium" layoutX="197.0" layoutY="25.0" onAction="#goMediumLevel" style="-fx-background-radius: 100%; -fx-border-radius: 100%; -fx-background-color: rgba(219, 219, 219,0);" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="115.0" fitWidth="126.0" opacity="0.91" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@../fotos/star_medium.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="buttonHard" layoutX="365.0" layoutY="25.0" onAction="#goHardLevel" style="-fx-background-radius: 100%; -fx-border-radius: 100%; -fx-background-color: rgba(219, 219, 219,0);" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="115.0" fitWidth="126.0" opacity="0.91" pickOnBounds="true" smooth="false">
+                           <image>
+                              <Image url="@../fotos/star_hard.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </Pane>
          </children>
       </Pane>
    </children>
