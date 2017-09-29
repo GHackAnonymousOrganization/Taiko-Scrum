@@ -160,8 +160,8 @@
                   <Image url="@../fotos/fondo3_3.jpg" />
                </image>
             </ImageView>
-            <JFXButton layoutX="191.0" layoutY="320.0" prefHeight="53.0" prefWidth="57.0" style="-fx-border-color: #fff; -fx-background-radius: 100%; -fx-border-radius: 100%; -fx-background-color: rgba(94, 192, 237,0.5);" />
-            <JFXButton layoutX="330.0" layoutY="320.0" prefHeight="53.0" prefWidth="57.0" style="-fx-border-color: #fff; -fx-background-radius: 100%; -fx-border-radius: 100%; -fx-background-color: rgba(232, 58, 39,0.5);" />
+            <JFXButton fx:id="blueButton" layoutX="191.0" layoutY="320.0" onKeyPressed="#buttonPress" onKeyReleased="#buttonRelease" prefHeight="53.0" prefWidth="57.0" style="-fx-border-color: #fff; -fx-background-radius: 100%; -fx-border-radius: 100%; -fx-background-color: rgba(94, 192, 237,0.5);" />
+            <JFXButton fx:id="redButton" layoutX="330.0" layoutY="320.0" onKeyPressed="#buttonPress" onKeyReleased="#buttonRelease" prefHeight="53.0" prefWidth="57.0" style="-fx-border-color: #fff; -fx-background-radius: 100%; -fx-border-radius: 100%; -fx-background-color: rgba(232, 58, 39,0.5);" />
          </children>
       </Pane>
    </children>

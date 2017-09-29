@@ -18,6 +18,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
@@ -55,6 +57,12 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private Label textInstruction;
+    
+    @FXML
+    private JFXButton blueButton;
+    
+    @FXML
+    private JFXButton redButton;
     
     
     @Override
@@ -124,6 +132,41 @@ public class FXMLDocumentController implements Initializable {
         }
     }
     
+    @FXML
+    void buttonPress(KeyEvent  event) {
+        
+        if (event.getEventType() == KeyEvent.KEY_PRESSED) {
+            if(event.getCode()==KeyCode.Z){
+                //result.setText(game.binarySearchLeft(time));
+                //if(blueButton.isPressed()){
+                    blueButton.setStyle("-fx-border-color:#fff;-fx-background-radius:100%;-fx-border-radius:100%;-fx-background-color: rgba(49, 100, 183,0.5);");
+                //}
+                System.out.println("Press z for blue button");
+            }if(event.getCode()==KeyCode.X){
+                //result.setText(game.binarySearchRight(time));
+                redButton.setStyle("-fx-border-color:#fff;-fx-background-radius:100%;-fx-border-radius:100%;-fx-background-color: rgba(183, 21, 18,0.5);");
+                System.out.println("Press x for blue button");
+            }
+        } 
+    }
+    
+    @FXML
+    void buttonRelease(KeyEvent event) {
+        if (event.getEventType() == KeyEvent.KEY_RELEASED) { //KeyEvent.KEY_RELEASED
+            if(event.getCode()==KeyCode.Z){
+                //result.setText(game.binarySearchLeft(time));
+                //if(blueButton.isPressed()){
+                     blueButton.setStyle("-fx-border-color:#fff;-fx-background-radius:100%;-fx-border-radius:100%;-fx-background-color: rgba(94, 192, 237,0.5);");
+               // }
+                System.out.println("RELEASED z for blue button");
+            }if(event.getCode()==KeyCode.X){
+                //result.setText(game.binarySearchRight(time));
+                redButton.setStyle("-fx-border-color:#fff;-fx-background-radius:100%;-fx-border-radius:100%;-fx-background-color: rgba(232, 58, 39,0.5);");
+                System.out.println("RELEASED x for blue button");
+            }
+        }
+    }
+
     private void animation(Pane p, String mode) {
           if(mode.equals("top")){
            p.setLayoutX(0.0d);
