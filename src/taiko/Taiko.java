@@ -21,10 +21,8 @@ public class Taiko extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));  
         
-        
-        Parent homePageParent = (Parent)fxmlLoader.load();
+        Parent homePageParent = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
 
         Scene homePageScene = new Scene(homePageParent);
         

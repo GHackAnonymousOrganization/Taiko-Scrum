@@ -6,9 +6,12 @@
 package taiko;
 
 import com.jfoenix.controls.JFXButton;
+
+import background.*;
 import javafx.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -78,10 +81,10 @@ public class FXMLDocumentController implements Initializable {
     private JFXButton buttonEasy;
     
     @FXML
-    private Pane panelPlay;
+    public Pane panelPlay;
     
     @FXML
-    private Label scoreLabel;
+    public Label scoreLabel;
     
     @FXML
     private ImageView perfectPhotoBlue;
@@ -101,41 +104,42 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private ImageView goodPhotoRed;
     
+    private Game game;
+    
     
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //To change body of generated methods, choose Tools | Templates.
         //throw new UnsupportedOperationException("Not supported yet."); 
-        
     }
     
-    void redPerfect(){
+    public void redPerfect(){
         perfectPhotoBlue.setVisible(true);
         goodPhotoRed.setVisible(false);
         badPhotoRed.setVisible(false);
     }
-    void redGood(){
+    public void redGood(){
         goodPhotoRed.setVisible(true);
         badPhotoRed.setVisible(false);
         perfectPhotoBlue.setVisible(false);
     }
-    void redBad(){
+    public void redBad(){
         goodPhotoRed.setVisible(false);
         badPhotoRed.setVisible(true);
         perfectPhotoBlue.setVisible(false);
     }
-    void bluePerfect(){
+    public void bluePerfect(){
         perfectPhotoRed.setVisible(true);
         goodPhotoRed.setVisible(false);
         badPhotoRed.setVisible(false);
     }
-    void blueGood(){
+    public void blueGood(){
         goodPhotoBlue.setVisible(true);
         badPhotoBlue.setVisible(false);
         perfectPhotoRed.setVisible(false);
     }
-    void blueBad(){
+    public void blueBad(){
         goodPhotoBlue.setVisible(false);
         badPhotoBlue.setVisible(true);
         perfectPhotoRed.setVisible(false);
@@ -205,7 +209,10 @@ public class FXMLDocumentController implements Initializable {
             textInstruction.setText(instruction.getSpanishInstruction());
         }else if(comboLanguage.getSelectionModel().isSelected(2)){
             textInstruction.setText(instruction.getBasqueInstruction());
+        }else if(comboLanguage.getSelectionModel().isSelected(3)){
+            textInstruction.setText(instruction.getItalianInstruction());
         }
+        
     }
     
     @FXML
@@ -216,6 +223,9 @@ public class FXMLDocumentController implements Initializable {
         animation(panelDificultyLevel, "leftCenter");
         animation(panelPlay, "left");
         panelPlay.setVisible(true);
+        game=new Game(this,"INXS");
+		Thread background=new Thread(()->game.start());
+		background.start();
     }
 
     @FXML
@@ -226,7 +236,9 @@ public class FXMLDocumentController implements Initializable {
         animation(panelDificultyLevel, "leftCenter");
         animation(panelPlay, "left");
         panelPlay.setVisible(true);
-
+        game=new Game(this,"LaBamba");
+		Thread background=new Thread(()->game.start());
+		background.start();
     }
     
     @FXML
@@ -237,43 +249,40 @@ public class FXMLDocumentController implements Initializable {
         animation(panelDificultyLevel, "leftCenter");
         animation(panelPlay, "left");
         panelPlay.setVisible(true);
-
+        game=new Game(this,"SandStorm");
+		Thread background=new Thread(()->game.start());
+		background.start();
     }
     
     //Los ventos no funcionan cuando se inicia el juego desde la ventana principal
     
     @FXML
-    void buttonPress(KeyEvent  event) {
-        
-        if (event.getEventType() == KeyEvent.KEY_PRESSED) {
-            if(event.getCode()==KeyCode.Z){
-                //result.setText(game.binarySearchLeft(time));
-                //if(blueButton.isPressed()){
-                    blueButton.setStyle("-fx-border-color:#fff;-fx-background-radius:100%;-fx-border-radius:100%;-fx-background-color: rgba(49, 100, 183,0.5);");
-                //}
-                System.out.println("Press z for blue button");
-            }if(event.getCode()==KeyCode.X){
-                //result.setText(game.binarySearchRight(time));
-                redButton.setStyle("-fx-border-color:#fff;-fx-background-radius:100%;-fx-border-radius:100%;-fx-background-color: rgba(183, 21, 18,0.5);");
-                System.out.println("Press x for blue button");
+    void buttonPress(KeyEvent  event) 
+    {
+    	if(event.getEventType() == KeyEvent.KEY_PRESSED) 
+    	{
+    		long time=System.currentTimeMillis()-game.getStartTime();
+            if(event.getCode()==KeyCode.Z)
+            {
+            	blueButton.setStyle("-fx-border-color:#fff;-fx-background-radius:100%;-fx-border-radius:100%;-fx-background-color: rgba(49, 100, 183,0.5);");
+                game.binarySearchLeft(time);
             }
+            else if(event.getCode()==KeyCode.X)
+            {
+                redButton.setStyle("-fx-border-color:#fff;-fx-background-radius:100%;-fx-border-radius:100%;-fx-background-color: rgba(183, 21, 18,0.5);");
+    			game.binarySearchRight(time);
+    		}
         } 
     }
     
     @FXML
     void buttonRelease(KeyEvent event) {
-        if (event.getEventType() == KeyEvent.KEY_RELEASED) { //KeyEvent.KEY_RELEASED
-            if(event.getCode()==KeyCode.Z){
-                //result.setText(game.binarySearchLeft(time));
-                //if(blueButton.isPressed()){
-                     blueButton.setStyle("-fx-border-color:#fff;-fx-background-radius:100%;-fx-border-radius:100%;-fx-background-color: rgba(94, 192, 237,0.5);");
-               // }
-                System.out.println("RELEASED z for blue button");
-            }if(event.getCode()==KeyCode.X){
-                //result.setText(game.binarySearchRight(time));
+        if (event.getEventType() == KeyEvent.KEY_RELEASED) 
+        {
+            if(event.getCode()==KeyCode.Z)
+            	blueButton.setStyle("-fx-border-color:#fff;-fx-background-radius:100%;-fx-border-radius:100%;-fx-background-color: rgba(94, 192, 237,0.5);");
+            else if(event.getCode()==KeyCode.X)
                 redButton.setStyle("-fx-border-color:#fff;-fx-background-radius:100%;-fx-border-radius:100%;-fx-background-color: rgba(232, 58, 39,0.5);");
-                System.out.println("RELEASED x for blue button");
-            }
         }
     }
 
