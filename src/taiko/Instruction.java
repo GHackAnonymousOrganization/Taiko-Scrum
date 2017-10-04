@@ -14,12 +14,13 @@ public class Instruction {
    private String englishInstruction;
    private String spanishInstruction;
    private String basqueInstruction;
+   private String italianInstruction;
 
    public Instruction() {
        englishInstruction = "The objective of this game is to press the "
                + "appropriate arrow when the music notes reach the bottom of "
                + "the screen and they are aligned with the circular mark. "
-               + "Depending from which side the arrive you will have to press "
+               + "Depending from which side they arrive you will have to press "
                + "the right or left arrow.";
        spanishInstruction = "El objetivo de este juego es pulsar la flecha "
                + "correspondiente cuando las notas de música llegan abajo de "
@@ -30,14 +31,26 @@ public class Instruction {
                + "behera heltzen direnean eta marka borobilarekin lerrokatuta "
                + "dagoenean, gezi egokia sakatzea da. Nota heldu den aldearen "
                + "arabera eskubiko gezia edo ezkerrekoa sakatu beharko duzu.";
+       italianInstruction = "L'obiettivo di questo gioco premere il tasto"
+    		   + "appropriato quando le note della musica raggiungono il fondo"
+    		   + "dello schermo e sono allineati con i pulsanti circolari. "
+    		   + "A seconda di quale lato arrivino bisogner premere il tasto"
+    		   + "destro o sinistro";
     } 
-   public Instruction(String englishInstruction, String spanishInstruction, String basqueInstruction) {
+   public Instruction(String englishInstruction, String spanishInstruction, String basqueInstruction, String italianInstruction) {
         this.englishInstruction = englishInstruction;
         this.spanishInstruction = spanishInstruction;
         this.basqueInstruction = basqueInstruction;
+        this.italianInstruction = italianInstruction;
     }
 
-    public String getEnglishInstruction() {
+    public String getItalianInstruction() {
+	return italianInstruction;
+}
+public void setItalianInstruction(String italianInstruction) {
+	this.italianInstruction = italianInstruction;
+}
+	public String getEnglishInstruction() {
         return englishInstruction;
     }
 
